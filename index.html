@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title>FashionCart</title></head>
+
+<body style="margin:0;font-family:Arial;background:#eef2ff;">
+
+<div style="display:flex;justify-content:space-between;align-items:center;padding:20px 40px;background:white;box-shadow:0 2px 10px #0001;position:sticky;top:0;z-index:10;">
+  <h2 style="margin:0;color:#4b5bff;">FashionCart</h2>
+  <input type="text" placeholder="Search for products..." 
+         style="padding:10px 15px;width:300px;border-radius:20px;border:1px solid #ccc;outline:none;">
+  <button style="padding:10px 18px;background:#4b5bff;color:white;border:none;border-radius:20px;cursor:pointer;">Login</button>
+</div>
+
+<div style="width:100%;height:350px;background:url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=1200') center/cover;border-radius:0 0 30px 30px;display:flex;align-items:center;justify-content:center;color:white;text-shadow:0 3px 10px #0007;">
+  <div style="text-align:center;">
+    <h1 style="font-size:45px;margin:0;">New Winter Collection</h1>
+    <p style="font-size:20px;margin-top:10px;">Trendy • Stylish • Comfortable</p>
+    <button style="padding:12px 22px;background:#4b5bff;color:white;border:none;border-radius:25px;font-size:16px;cursor:pointer;margin-top:15px;">Shop Now</button>
+  </div>
+</div>
+
+<h2 style="text-align:center;margin:40px 0 20px;color:#333;">Shop by Category</h2>
+
+<div style="display:flex;justify-content:center;gap:30px;flex-wrap:wrap;margin-bottom:40px;">
+  <div style="width:180px;height:180px;background:url('https://images.unsplash.com/photo-1523381210434-271e8be1f52b?w=600') center/cover;border-radius:20px;cursor:pointer;box-shadow:0 4px 12px #0003;"></div>
+  <div style="width:180px;height:180px;background:url('https://images.unsplash.com/photo-1520975918319-51a40a46cb59?w=600') center/cover;border-radius:20px;cursor:pointer;box-shadow:0 4px 12px #0003;"></div>
+  <div style="width:180px;height:180px;background:url('https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?w=600') center/cover;border-radius:20px;cursor:pointer;box-shadow:0 4px 12px #0003;"></div>
+</div>
+
+<h2 style="text-align:center;margin-bottom:20px;color:#333;">Top Picks for You</h2>
+
+<div style="max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;gap:30px;justify-content:center;">
+
+<script>
+  const products = [
+    {name:"Classic Hoodie", price:"₹999", img:"https://images.unsplash.com/photo-1543076447-215ad9ba6923?w=600"},
+    {name:"Slim Fit Jeans", price:"₹1299", img:"https://images.unsplash.com/photo-1514996937319-344454492b37?w=600"},
+    {name:"Streetwear Jacket", price:"₹1999", img:"https://images.unsplash.com/photo-1544441893-675973e31985?w=600"},
+    {name:"Casual T-Shirt", price:"₹499", img:"https://images.unsplash.com/photo-1523381294911-8d3cead13475?w=600"},
+    {name:"Sneakers", price:"₹1599", img:"https://images.unsplash.com/photo-1528701800489-20be9e62a005?w=600"},
+    {name:"Sportswear Set", price:"₹1499", img:"https://images.unsplash.com/photo-1521412644187-c49fa049e84d?w=600"}
+  ];
+
+  document.addEventListener("DOMContentLoaded", ()=>{
+    const container = document.getElementById("products");
+    products.forEach(p=>{
+      container.innerHTML += `
+        <div style="width:300px;background:white;border-radius:20px;box-shadow:0 4px 15px #0002;padding:15px;overflow:hidden;transition:0.3s;cursor:pointer;"
+             onmouseover="this.style.transform='scale(1.05)'"
+             onmouseout="this.style.transform='scale(1)'">
+          <img src="${p.img}" style="width:100%;height:230px;object-fit:cover;border-radius:15px;">
+          <h3 style="margin:15px 0 5px;font-size:20px;color:#333;">${p.name}</h3>
+          <p style="margin:0;color:#555;font-size:18px;">${p.price}</p>
+          <button style="margin-top:12px;padding:10px 16px;background:#4b5bff;color:white;border:none;border-radius:10px;cursor:pointer;font-size:15px;width:100%;">Add to Cart</button>
+        </div>
+      `;
+    });
+  });
+</script>
+
+<div id="products"></div>
+</div>
+
+<div style="margin-top:50px;background:#4b5bff;color:white;text-align:center;padding:30px;font-size:14px;">
+  © 2025 FashionCart • All Rights Reserved
+</div>
+
+</body>
+</html>
